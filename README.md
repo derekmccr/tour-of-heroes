@@ -1,6 +1,7 @@
 # Tour of Overwatch Heroes
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.2.
+
 This project follows Angular tutorial at https://angular.io/tutorial but the hero data is Overwatch Heros instead of heros listed in tutorial. Because of this change, role property added to Hero class and displayed within hero details. 
 
 ## Development server
