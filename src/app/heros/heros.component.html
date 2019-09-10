@@ -4,11 +4,14 @@
   <label>Hero name:
     <input #heroName />
   </label> <br>
-  <label>Hero role:     
-    <input #heroRole />
-  </label>
+  <label>Hero role: </label>
+  <select name="selectRole" [(ngModel)]="selectedRole">
+    <option value="Tank">Tank</option>
+    <option value="DPS">DPS</option>
+    <option value="Support">Support</option>
+  </select>
   <!-- (click) passes input value to add() and then clears the input -->
-  <button (click)="add(heroName.value, heroRole.value); heroName.value=''; heroRole.value=''">
+  <button (click)="add(heroName.value, selectedRole); heroName.value=''; heroRole.value=''">
     add
   </button>
 </div>

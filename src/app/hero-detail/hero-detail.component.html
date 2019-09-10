@@ -1,7 +1,13 @@
 <div *ngIf="hero">
   <h2>{{hero.name | uppercase}} Details</h2>
   <div><span>id: </span>{{hero.id}}</div>
-  <div><span>role: </span>{{hero.role}}</div>
+  <div><label>Hero role: </label>
+    <select name="selectRole" [(ngModel)]="hero.role">
+      <option value="Tank">Tank</option>
+      <option value="DPS">DPS</option>
+      <option value="Support">Support</option>
+    </select>
+  </div>
   <div>
     <label>name:
       <input [(ngModel)]="hero.name" placeholder="name"/>
