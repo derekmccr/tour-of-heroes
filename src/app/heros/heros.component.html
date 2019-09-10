@@ -1,8 +1,64 @@
 <h2>My Heroes</h2>
+
+<div>
+  <label>Hero name:
+    <input #heroName />
+  </label> <br>
+  <label>Hero role:     
+    <input #heroRole />
+  </label>
+  <!-- (click) passes input value to add() and then clears the input -->
+  <button (click)="add(heroName.value, heroRole.value); heroName.value=''; heroRole.value=''">
+    add
+  </button>
+</div>
+
+<div>
+  <h3>Tank</h3>
+  <ul class="heroes">
+      <li *ngFor="let hero of filterHerosofRole('Tank')">
+          <a routerLink="/detail/{{hero.id}}">
+            <span class="badge">{{hero.id}}</span> {{hero.name}}
+          </a>
+          <button class="delete" title="delete hero"
+            (click)="delete(hero)">x</button>
+        </li>
+    </ul>
+</div>
+<div>
+  <h3>DPS</h3>
+  <ul class="heroes">
+      <li *ngFor="let hero of filterHerosofRole('DPS')">
+          <a routerLink="/detail/{{hero.id}}">
+            <span class="badge">{{hero.id}}</span> {{hero.name}}
+          </a>
+          <button class="delete" title="delete hero"
+            (click)="delete(hero)">x</button>
+        </li>
+    </ul>
+</div>
+<div>
+  <h3>Support</h3>
+  <ul class="heroes">
+      <li *ngFor="let hero of filterHerosofRole('Support')">
+          <a routerLink="/detail/{{hero.id}}">
+            <span class="badge">{{hero.id}}</span> {{hero.name}}
+          </a>
+          <button class="delete" title="delete hero"
+            (click)="delete(hero)">x</button>
+      </li>
+  </ul>
+</div>
+
+
+<!--
 <ul class="heroes">
   <li *ngFor="let hero of heros">
     <a routerLink="/detail/{{hero.id}}">
       <span class="badge">{{hero.id}}</span> {{hero.name}}
     </a>
+    <button class="delete" title="delete hero"
+      (click)="delete(hero)">x</button>
   </li>
 </ul>
+-->
